@@ -1,0 +1,75 @@
+
+	<style type="text/css">
+	/* Avoid unexpected sizing on all elements. */
+
+	</style>
+	
+	<div id="html" style="height:29.7cm;" >
+     <table style="font-weight:bold;font-family:times;width:3cm;font-size:3px;" border="1">
+     <tr>
+     <td>Name</td>
+     <td><b>:</b>Razaul Haque Khan</td>
+     <td>ID No</td>
+     <td><b>:</b>#349</td>
+     </tr>
+     </table>
+	</div>
+	
+	
+	
+
+  <script src="https://html2canvas.hertzen.com/dist/html2canvas.js"></script>
+  <script type="text/javascript" src="pdf/examples/js/jquery/jquery-1.7.1.min.js"></script>
+  <script type="text/javascript" src="pdf/examples/js/jquery/jquery-ui-1.8.17.custom.min.js"></script>
+  <script type="text/javascript" src="pdf/dist/jspdf.umd.js"></script>
+  <script type="text/javascript" src="pdf/examples/js/basic.js"></script>
+
+  <script>
+  
+  /*
+  pdf.html(document.body, {
+  callback: function (pdf) {
+  var iframe = document.createElement('iframe');
+  iframe.setAttribute('style', 'position:absolute;right:0; top:0; bottom:0;');
+  document.body.appendChild(iframe);
+  
+  
+  */
+  
+  
+  
+    window.jsPDF = window.jspdf.jsPDF;
+    
+    
+
+    var doc = new jsPDF('p', 'mm', [297, 210]);
+    
+    var y=0;
+    function table(data1,data2)
+    {
+    var x=0;
+    var h=5;
+    var w=0;
+    y=y+5;
+        data1 = data1.split(",");
+        data2 = data2.split(",");
+    for (let i = 0; i < data1.length-1; i++) {
+    x=parseInt(data1[i])-x;
+    w=data1[i];
+    
+    doc.rect(x, y, w, h);
+    doc.setFontSize(12);
+    doc.text(x, (y+2.5), data1[i]);
+    }
+    }
+    var data1 ="10,30,60,20";
+    var data2 ="10,30,60,20";
+    table(data1,data2);
+    
+    
+   
+    
+    doc.save("test.pdf");
+    
+  </script>
+
