@@ -1,0 +1,91 @@
+	
+	
+
+  <script src="pdf/html2canvas.js"></script>
+  <script type="text/javascript" src="pdf/examples/js/jquery/jquery-1.7.1.min.js"></script>
+  <script type="text/javascript" src="pdf/examples/js/jquery/jquery-ui-1.8.17.custom.min.js"></script>
+  <script type="text/javascript" src="pdf/dist/jspdf.umd.js"></script>
+  <script type="text/javascript" src="pdf/examples/js/basic.js"></script>
+
+  <script>
+    window.jsPDF = window.jspdf.jsPDF;
+    
+    
+    
+    var pdf = new jsPDF('p', 'pt', 'a4');
+    pdf.html(document.body, {
+    callback: function (pdf) {
+    var iframe = document.createElement('iframe');
+    iframe.setAttribute('style', 'position:absolute;right:0; top:0; bottom:0; height:100%; width:100px');
+    document.body.appendChild(iframe);
+    pdf.save('datauristring');
+    }
+    });
+  </script>
+
+<div id="html" style='position: absolute'>
+		<h1>Tables</h1>
+		<table class='table1'>
+			<tr>
+				<td>Item</td>
+				<td>Cost</td>
+				<td>Description</td>
+				<td>Available</td>
+			</tr>
+			<tr>
+				<td>Milk</td>
+				<td>$1.00</td>
+				<td>Hello PDF World</td>
+				<td>Out Of Stock</td>
+			</tr>
+			<tr>
+				<td>Milk</td>
+				<td>$1.00</td>
+				<td>Hello PDF World</td>
+				<td>Out Of Stock</td>
+			</tr>
+		</table>
+		<table class='table2'>
+			<tr>
+				<td>Item</td>
+				<td>Cost</td>
+				<td>Description</td>
+				<td>Available</td>
+			</tr>
+			<tr>
+				<td>Milk</td>
+				<td>$1.00</td>
+				<td>Hello PDF World</td>
+				<td>Out Of Stock</td>
+			</tr>
+			<tr>
+				<td>Milk</td>
+				<td>$1.00</td>
+				<td>Hello PDF World</td>
+				<td>Out Of Stock</td>
+			</tr>
+		</table>
+
+		<table class='CSSTableGenerator'>
+			<tr>
+				<td>Item</td>
+				<td>Cost</td>
+				<td>Description</td>
+				<td>Available</td>
+			</tr>
+			<tr>
+				<td>Milk</td>
+				<td>$1.00</td>
+				<td>Hello PDF World</td>
+				<td>Out Of Stock</td>
+			</tr>
+			<tr>
+				<td>Milk</td>
+				<td>$1.00</td>
+				<td>Hello PDF World</td>
+				<td>Out Of Stock</td>
+			</tr>
+		</table>
+	</div>
+
+
